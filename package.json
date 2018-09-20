@@ -1,6 +1,6 @@
 {
   "name": "@rxloop/devtools",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "rxloop devtools plugin.",
   "scripts": {
     "lint": "echo 'lint'",
