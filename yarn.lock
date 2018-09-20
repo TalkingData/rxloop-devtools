@@ -16,6 +16,14 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
+"@rxloop/core@^0.10.0":
+  version "0.10.0"
+  resolved "https://registry.npmjs.org/@rxloop/core/-/core-0.10.0.tgz#8ce18326f85444d692b326968756b9605dece736"
+  dependencies:
+    invariant "^2.2.4"
+    is-plain-object "^2.0.4"
+    rxjs "^6.0.0"
+
 "@types/estree@0.0.39":
   version "0.0.39"
   resolved "https://registry.npmjs.org/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
@@ -1923,7 +1931,7 @@ ini@^1.3.2, ini@~1.3.0:
   version "1.3.5"
   resolved "https://registry.npmjs.org/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
 
-invariant@^2.2.2:
+invariant@^2.2.2, invariant@^2.2.4:
   version "2.2.4"
   resolved "https://registry.npmjs.org/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
   dependencies:
