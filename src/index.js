@@ -3,7 +3,7 @@ import { map, withLatestFrom } from 'rxjs/operators';
 
 export default function rxloopDevtools() {
   return function init({
-    onCreateReducer$: action$,
+    onStatePatch$: action$,
     onStart$,
   }) {
     if (!window.__REDUX_DEVTOOLS_EXTENSION__) {
@@ -38,10 +38,9 @@ export default function rxloopDevtools() {
       
       const output$ = store$.pipe(
         withLatestFrom(action$),
-        map(([ arr, { actionData: action }]) => {
+        map(([ arr, { data: action }]) => {
           const store = {};
           models.forEach(( model, index) => {
-            delete arr[index].__action__;
             store[model] = arr[index];
           });
           devTools.send(action, store);
