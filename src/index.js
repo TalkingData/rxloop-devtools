@@ -23,31 +23,28 @@ export default function rxloopDevtools() {
         streams.push(this[`${name}$`]);
       });
   
-      const store$ = combineLatest(
+      const source$ = combineLatest(
         ...streams
       );
-  
-      const sub = store$.subscribe((arr) => {
-        const store = {};
-        models.forEach(( model, index) => {
-          store[model] = arr[index];
-        });
-        devTools.init(store);
-      });
-      sub.unsubscribe();
-      
-      const output$ = store$.pipe(
-        withLatestFrom(action$),
-        map(([ arr, { data: action }]) => {
+
+      const store$ = source$.pipe(
+        map((arr) => {
           const store = {};
           models.forEach(( model, index) => {
             store[model] = arr[index];
           });
-          devTools.send(action, store);
           return store;
         }),
       );
-  
+
+      store$.subscribe((store) => devTools.init(store)).unsubscribe();
+      
+      const output$ = action$.pipe(
+        withLatestFrom(store$),
+        map(
+          ([{ reducerAction: action }, store]) => devTools.send(action, store)
+        ),
+      );
       output$.subscribe();
     });
   };
