@@ -39,10 +39,10 @@ export default function rxloopDevtools() {
 
       store$.subscribe((store) => devTools.init(store)).unsubscribe();
       
-      const output$ = action$.pipe(
-        withLatestFrom(store$),
+      const output$ = store$.pipe(
+        withLatestFrom(action$),
         map(
-          ([{ reducerAction: action }, store]) => devTools.send(action, store)
+          ([store, { reducerAction: action }]) => devTools.send(action, store)
         ),
       );
       output$.subscribe();

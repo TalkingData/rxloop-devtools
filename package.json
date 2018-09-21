@@ -35,7 +35,7 @@
   },
   "homepage": "https://talkingdata.github.io/rxloop-devtools",
   "peerDependencies": {
-    "@rxloop/core": ">= 0.10.0",
+    "@rxloop/core": ">= 0.10.1",
     "rxjs": "^6.0.0-0"
   },
   "devDependencies": {
