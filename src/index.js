@@ -19,15 +19,12 @@ export default function rxloopDevtools() {
       const streams = [];
       const models = [];
       Object.keys(this._stream).forEach(name => {
+        // TODO 支持过滤一些 model
         models.push(name);
         streams.push(this[`${name}$`]);
       });
-  
-      const source$ = combineLatest(
-        ...streams
-      );
 
-      const store$ = source$.pipe(
+      const store$ = combineLatest( ...streams ).pipe(
         map((arr) => {
           const store = {};
           models.forEach(( model, index) => {
