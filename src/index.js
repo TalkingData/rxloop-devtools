@@ -1,7 +1,7 @@
 import { combineLatest } from 'rxjs';
 import { map, withLatestFrom } from 'rxjs/operators';
 
-export default function rxloopDevtools() {
+export default function rxloopDevtools(config = {}) {
   return function init({
     onStatePatch$: action$,
     onStart$,
@@ -19,7 +19,10 @@ export default function rxloopDevtools() {
       const streams = [];
       const models = [];
       Object.keys(this._stream).forEach(name => {
-        // TODO 支持过滤一些 model
+        // ignore items in blacklist
+				if (config.blacklist && config.blacklist.includes(name)) {
+					return;
+				}
         models.push(name);
         streams.push(this[`${name}$`]);
       });
