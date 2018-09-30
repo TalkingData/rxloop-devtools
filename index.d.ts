@@ -11,4 +11,8 @@ export interface API {
 
 export type Plugin = (api: API) => void;
 
-export default function rxloopDevtools(): Plugin;
+export interface Config {
+  blacklist?: String[],
+}
+
+export default function rxloopDevtools(conf?: Config): Plugin;
