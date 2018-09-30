@@ -9,7 +9,11 @@ import rxloop from '@rxloop/core';
 import devtools from '@rxloop/devtools';
 
 const app = rxloop({
-  plugins: [ devtools() ],
+  plugins: [
+    devtools({
+      blacklist: [ 'loading' ]
+    })
+  ],
 });
 
 app.model({
