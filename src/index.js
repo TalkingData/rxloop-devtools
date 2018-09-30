@@ -20,9 +20,9 @@ export default function rxloopDevtools(config = {}) {
       const models = [];
       Object.keys(this._stream).forEach(name => {
         // ignore items in blacklist
-				if (config.blacklist && config.blacklist.includes(name)) {
-					return;
-				}
+        if (config.blacklist && config.blacklist.includes(name)) {
+          return;
+        }
         models.push(name);
         streams.push(this[`${name}$`]);
       });
