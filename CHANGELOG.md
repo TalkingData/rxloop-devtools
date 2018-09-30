@@ -1,3 +1,13 @@
+<a name="0.2.2"></a>
+## [0.2.2](https://github.com/TalkingData/rxloop-devtools/compare/v0.2.1...v0.2.2) (2018-09-30)
+
+
+### Bug Fixes
+
+* fix ts type ([2c8e09f](https://github.com/TalkingData/rxloop-devtools/commit/2c8e09f))
+
+
+
 <a name="0.2.1"></a>
 ## [0.2.1](https://github.com/TalkingData/rxloop-devtools/compare/v0.2.0...v0.2.1) (2018-09-30)
 
