@@ -1,6 +1,6 @@
 # rxloop-devtools
 
-> rxloop devtools plugin
+> the rxloop devtools plugin
 
 ## Usage
 
