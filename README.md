@@ -1,4 +1,5 @@
 # rxloop-devtools
+https://github.com/TalkingData/rxloop/tree/master/packages/devtools
 
 > the rxloop devtools plugin
 
